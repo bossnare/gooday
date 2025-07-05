@@ -8,7 +8,7 @@
 **Tailwindcss**: styling
 **Vite**: build tool & dev tool
 
-### clone
+### To clone
 
 **HTTTPS**:
 
