@@ -7,5 +7,6 @@ export const fetcher = async ({ url }: FetchProps) => {
     return data;
   } catch (err: unknown) {
     console.log(err);
+    return err
   }
 };
