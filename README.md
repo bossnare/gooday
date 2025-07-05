@@ -4,18 +4,23 @@
 
 ## Features
 
+You can...
+
 ## Techno
 
 **React**: logic frontend
 **Tailwindcss**: styling
 **Vite**: build tool & dev tool
 
+## API
+
+[weather()]
+
 ### To clone
 
-**HTTTPS**:
+**HTTPS**:
 
 ```bash
-
 git clone https://github.com/bossnare/gooday.git
 
 ```
