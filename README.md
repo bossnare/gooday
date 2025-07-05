@@ -1,10 +1,10 @@
 # Gooday 🌤️⛱️
 
-**Gooday** is a webapp for real-time weather
+**Gooday** is an webapp for real-time weather
 
 ## Techno
 
-**React**: logic fronte
+**React**: logic frontend
 **Tailwindcss**: styling
 **Vite**: build tool & dev tool
 
