@@ -2,6 +2,8 @@
 
 **Gooday** is an webapp for real-time weather
 
+## Features
+
 ## Techno
 
 **React**: logic frontend
