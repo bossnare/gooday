@@ -5,6 +5,17 @@
   body {
     @apply py-2 px-4;
   }
+  button {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .container {
+    margin-inline: auto;
+    padding-inline: 2rem;
+    margin: 0 auto;
+  }
 }
 
 /* :root {
