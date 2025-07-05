@@ -4,4 +4,8 @@ type ButtonProps = {
   onClick?: () => void;
 };
 
-export type { ButtonProps };
+type FetchProps = {
+  url: string;
+};
+
+export type { ButtonProps, FetchProps };
