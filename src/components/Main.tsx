@@ -1,4 +1,5 @@
 import { fetcher } from '@/libs/fetcher';
+import { API_KEY } from '@/utils/constants';
 import Button from './ui/Button';
 
 const Main = () => {
@@ -8,11 +9,12 @@ const Main = () => {
         <h1>BONJOUR</h1>
         <p>Hello! My name is Jump Jump to quick haha...</p>
         <Button
-          onClick={() =>
-            fetcher(
-              `https://api.weatherapi.com/v1/current.json?key=${process.env.API_KEY}&q=Antananarivo&aqi=no`
-            )
-          }
+          onClick={async () => {
+            const data = await fetcher(
+              `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=Antananarivo&aqi=no`
+            );
+            console.log(data);
+          }}
           className={`bg-blue-700 text-white`}
           label={'Button'}
         />
