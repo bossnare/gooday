@@ -5,11 +5,11 @@ const Button = ({ label, className, onClick, loading }: ButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className={`py-1.5 px-4 rounded-md min-w-[100px] min-h-[40px] ${className}`}
+      className={`py-1 px-2 rounded-md min-w-[80px] min-h-[40px] ${className}`}
     >
       {loading && (
         <span>
-          <SpinLoader className="size-6 border-gray-400" />
+          <SpinLoader className="size-5 border-gray-400" />
         </span>
       )}
       {!loading && label}
