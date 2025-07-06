@@ -19,7 +19,9 @@ const Hero = () => {
   const fetchWeatherData = async () => {
     try {
       setLoading(true);
-      const data = await fetcher(`${API_URL}&q=${randomCity()}&aqi=no`);
+      const data = await fetcher(
+        `${API_URL}&q=${randomCity() || 'Antananarivo'}&aqi=no`
+      );
       if (!data.length) {
         console.log('Data:', data);
         setInfo(data);
@@ -40,7 +42,7 @@ const Hero = () => {
         </h1>
         <p className="inline mr-2">{info?.current?.condition?.text}</p>
         <span className="inline-block mr-2">
-          <b>- {info?.current?.temp_c}°C</b>
+          <b>~ {info?.current?.temp_c}°C</b>
         </span>
         <span>
           <b>{info?.current?.temp_f}°F</b>
