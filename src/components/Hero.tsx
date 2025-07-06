@@ -25,12 +25,12 @@ const Hero = () => {
         <p>Hello! My name is Jump Jump to quick haha...</p>
         <Button
           onClick={fetchWeatherData}
-          className={`bg-blue-700 text-white min-w-[100px]
+          className={`bg-blue-700 text-white
             hover:bg-blue-800 focus:bg-blue-900
             focus:outline-none focus:ring-2 focus:ring-blue-500
-            focus:ring-offset-2 transition-all duration-300 ease-in-out ${
-            loading ? 'opacity-50 cursor-not-allowed' : ''
-          }`}
+            focus:ring-offset-2 transition-all duration-300 ease-in-out flex justify-center items-center ${
+              loading ? 'opacity-50 cursor-not-allowed' : ''
+            }`}
           label={'Button'}
           loading={loading}
         />
