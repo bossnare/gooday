@@ -9,9 +9,9 @@ const Main = () => {
         <p>Hello! My name is Jump Jump to quick haha...</p>
         <Button
           onClick={() =>
-            fetcher({
-              url: `https://api.weatherapi.com/v1/current.json?key=${process.env.API_KEY}&q=Antananarivo&aqi=no`,
-            })
+            fetcher(
+              `https://api.weatherapi.com/v1/current.json?key=${process.env.API_KEY}&q=Antananarivo&aqi=no`
+            )
           }
           className={`bg-blue-700 text-white`}
           label={'Button'}
