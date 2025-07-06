@@ -37,7 +37,7 @@ const Hero = () => {
     <section className="container flex flex-col items-center justify-center h-screen">
       <div className="prose bg-gray-100 rounded-md p-4">
         <h1>
-          BONJOUR <span className="text-green-600">{name}</span> -{' '}
+        <span className="text-green-600">{name}</span> -{' '}
           <span className="text-gray-700">{country}</span>
         </h1>
         <p className="inline mr-2">{info?.current?.condition?.text}</p>
