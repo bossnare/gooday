@@ -16,17 +16,21 @@ export default defineConfig({
       includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
         name: 'Gooday Weather',
-        short_name: 'Gooday',
+        short_name: 'Gooday-app',
         description: 'A simple weather app to check the weather of any city.',
         theme_color: '#ffffff',
+        start_url: '/',
+        display: 'standalone',
+        background_color: '#ffffff', // fanampin'ny theme_color
+
         icons: [
           {
-            src: 'pwa-192x192.png',
+            src: '/icon.png',
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: 'pwa-512x512.png',
+            src: '/icon.png',
             sizes: '512x512',
             type: 'image/png',
           },
