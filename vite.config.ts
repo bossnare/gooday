@@ -39,6 +39,7 @@ export default defineConfig({
       // This is the configuration for the service worker
       // It includes caching strategies and other PWA features
       workbox: {
+        navigateFallback: undefined, // Disable navigate fallback for SPA
         globPatterns: ['**/*.{js,css,html,png,jpg,svg,ico}'],
         runtimeCaching: [
           {
