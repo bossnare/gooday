@@ -18,10 +18,10 @@ export default defineConfig({
         name: 'Gooday Weather',
         short_name: 'Gooday-app',
         description: 'A simple weather app to check the weather of any city.',
-        theme_color: '#ffffff',
+        theme_color: '#000000',
         start_url: '/',
         display: 'standalone',
-        background_color: '#ffffff', // fanampin'ny theme_color
+        background_color: '#000000', // fanampin'ny theme_color
 
         icons: [
           {
@@ -47,7 +47,7 @@ export default defineConfig({
             options: {
               cacheName: 'weather-api-cache',
               expiration: {
-                maxEntries: 50,
+                maxEntries: 50, // Maximum number of entries in the cache
                 maxAgeSeconds: 24 * 60 * 60, // 1 day
               },
             },
