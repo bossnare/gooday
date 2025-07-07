@@ -15,8 +15,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Gooday Weather',
-        short_name: 'Gooday-app',
+        name: 'Gooday App',
+        short_name: 'Gooday',
         description: 'A simple weather app to check the weather of any city.',
         theme_color: '#000000',
         start_url: '/',
