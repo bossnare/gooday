@@ -4,6 +4,7 @@ import Button from './ui/Button';
 import { useState } from 'react';
 import randomCity from '@/utils/randomCity';
 import type { WeatherData } from '@/types/propTypes';
+import { roundFormat } from '@/utils/roundFormat';
 
 const Hero = () => {
   // This component fetches weather data for a random city when the button is clicked
@@ -37,15 +38,15 @@ const Hero = () => {
     <section className="container flex flex-col items-center justify-center h-screen">
       <div className="prose bg-gray-100 rounded-md p-4">
         <h1>
-        <span className="text-green-600">{name}</span> -{' '}
+          <span className="text-green-600">{name}</span> -{' '}
           <span className="text-gray-700">{country}</span>
         </h1>
         <p className="inline mr-2">{info?.current?.condition?.text}</p>
         <span className="inline-block mr-2">
-          <b>~ {info?.current?.temp_c}°C</b>
+          <b>~ {roundFormat(info?.current?.temp_c || 0)}°C</b>
         </span>
         <span>
-          <b>{info?.current?.temp_f}°F</b>
+          <b>{roundFormat(info?.current?.temp_f || 0)}°F</b>
         </span>
         <Button
           onClick={fetchWeatherData}
