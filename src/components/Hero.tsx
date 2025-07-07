@@ -35,11 +35,11 @@ const Hero = () => {
   };
 
   return (
-    <section className="container flex flex-col items-center justify-center h-screen">
-      <div className="prose bg-gray-100 rounded-md p-4">
+    <section className="container bg-black flex flex-col items-center justify-center h-screen">
+      <div className="prose prose-invert bg-white/10 rounded-md p-4">
         <h1>
           <span className="text-green-600">{name}</span> -{' '}
-          <span className="text-gray-700">{country}</span>
+          <span className="text-gray-400">{country}</span>
         </h1>
         <p className="inline mr-2">{info?.current?.condition?.text}</p>
         <span className="inline-block mr-2">
