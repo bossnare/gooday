@@ -48,3 +48,15 @@ export default defineConfig({
 });
 
 ```
+
+git fix merge conflit
+
+## Shell commands used
+
+1. `git status`
+2. `git log -n 5 && git remote -v && git branch -vv`
+3. `git push origin main`
+4. `git pull origin main`
+5. `git config pull.rebase false && git pull origin main`
+6. `git add src/components/Hero.tsx && git commit -m "fix: merge conflict"`
+7. `git push origin main`
