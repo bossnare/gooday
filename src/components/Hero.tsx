@@ -5,6 +5,7 @@ import { useState } from 'react';
 import randomCity from '@/utils/randomCity';
 import type { WeatherData } from '@/types/propTypes';
 import { roundFormat } from '@/utils/roundFormat';
+import { Search } from 'lucide-react';
 
 const Hero = () => {
   // This component fetches weather data for a random city when the button is clicked
@@ -12,8 +13,8 @@ const Hero = () => {
   const [info, setInfo] = useState<WeatherData | null>(null);
 
   const { country, name } = info?.location || {
-    country: 'Tssss',
-    name: 'Tssss',
+    country: 'None',
+    name: 'None',
   };
 
   // function for fetching weather data for a random city
@@ -35,8 +36,24 @@ const Hero = () => {
   };
 
   return (
-    <section className="container bg-black/40 flex flex-col items-center justify-center h-screen">
-      <div className="prose prose-invert min-w-[50%] bg-black/50 rounded-md p-4">
+    <section className=" bg-black/50 mx-auto w-full flex flex-col gap-10 items-center justify-center h-screen">
+      <div className="prose text-center">
+        <h1>A Weather App</h1>
+      </div>
+      <div className="prose max-w-0 w-90 min-w-[95%] bg-black/50 rounded-md p-4">
+        <div className="w-full border-2 rounded-md p-0.5 focus:has-[input]:ring-gray-200 focus:has-[input]:ring-2 flex">
+          <input
+            id="is"
+            placeholder="Type a city"
+            type="search"
+            className="p-2 grow-1 focus:outline-hidden"
+            name="customSearch"
+          />
+          <button className="w-auto rounded-md p-2 bg-white/10 flex justify-center ">
+            <Search color="lightgray" />
+          </button>
+        </div>
+
         <h1>
           <span className="text-purple-500">{name}</span> -{' '}
           <span className="text-gray-200">{country}</span>

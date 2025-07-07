@@ -3,7 +3,7 @@
 
 @layer base {
   body {
-    @apply bg-slate-950;
+    @apply bg-slate-950 p-0 m-0;
   }
   button {
     cursor: pointer;
