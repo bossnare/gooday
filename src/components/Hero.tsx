@@ -56,7 +56,7 @@ const Hero = () => {
             focus:ring-offset-2 transition-all duration-300 ease-in-out flex justify-center items-center ${
               loading ? 'opacity-50 cursor-not-allowed' : ''
             }`}
-          label={'Button'}
+          label={'Start'}
           loading={loading}
         />
       </div>

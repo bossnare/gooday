@@ -36,6 +36,30 @@ export default defineConfig({
           },
         ],
       },
+      // This is the configuration for the service worker
+      // It includes caching strategies and other PWA features
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,png,jpg,svg,ico}'],
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/api\.weatherapi\.com\//,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'weather-api-cache',
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 24 * 60 * 60, // 1 day
+              },
+            },
+          },
+        ],
+      },
+      devOptions: {
+        enabled: true, // Enable PWA in development mode
+        type: 'module', // Use module type for service worker
+      },
+      injectRegister: 'auto', // Automatically inject the service worker registration script
+      // This option allows the PWA to be registered automatically
     }),
     // PWA configuration end
   ],
