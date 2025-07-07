@@ -67,7 +67,7 @@ if (!self.define) {
     });
   };
 }
-define(['./workbox-31ad9288'], (function (workbox) { 'use strict';
+define(['./workbox-9389596f'], (function (workbox) { 'use strict';
 
   self.skipWaiting();
   workbox.clientsClaim();
@@ -80,14 +80,8 @@ define(['./workbox-31ad9288'], (function (workbox) { 'use strict';
   workbox.precacheAndRoute([{
     "url": "registerSW.js",
     "revision": "3ca0b8505b4bec776b69afdba2768812"
-  }, {
-    "url": "index.html",
-    "revision": "0.2r1kap5ea74"
   }], {});
   workbox.cleanupOutdatedCaches();
-  workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("index.html"), {
-    allowlist: [/^\/$/]
-  }));
   workbox.registerRoute(/^https:\/\/api\.weatherapi\.com\//, new workbox.NetworkFirst({
     "cacheName": "weather-api-cache",
     plugins: [new workbox.ExpirationPlugin({
