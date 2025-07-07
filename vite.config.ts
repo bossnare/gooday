@@ -40,7 +40,7 @@ export default defineConfig({
     hmr: {
       // protocol: 'ws',
       // host: 'localhost',
-      overlay: false,
+      overlay: true,
     },
   },
   // This is the alias configuration for resolving paths in the project
