@@ -35,24 +35,24 @@ const Hero = () => {
   };
 
   return (
-    <section className="container bg-black flex flex-col items-center justify-center h-screen">
-      <div className="prose prose-invert bg-white/10 rounded-md p-4">
+    <section className="container bg-black/40 flex flex-col items-center justify-center h-screen">
+      <div className="prose prose-invert min-w-[50%] bg-black/50 rounded-md p-4">
         <h1>
-          <span className="text-green-600">{name}</span> -{' '}
-          <span className="text-gray-400">{country}</span>
+          <span className="text-purple-500">{name}</span> -{' '}
+          <span className="text-gray-200">{country}</span>
         </h1>
         <p className="inline mr-2">{info?.current?.condition?.text}</p>
         <span className="inline-block mr-2">
           <b>~ {roundFormat(info?.current?.temp_c || 0)}°C</b>
         </span>
         <span>
-          <b>{roundFormat(info?.current?.temp_f || 0)}°F</b>
+          <b>~ {roundFormat(info?.current?.temp_f || 0)}°F</b>
         </span>
         <Button
           onClick={fetchWeatherData}
-          className={`bg-blue-700 text-white mt-2
-            hover:bg-blue-800 focus:bg-blue-900
-            focus:outline-none focus:ring-2 focus:ring-blue-500
+          className={`bg-indigo-700 text-white mt-2
+            hover:bg-indigo-800 focus:bg-indigo-900
+            focus:outline-none focus:ring-2 focus:ring-indigo-500
             focus:ring-offset-2 transition-all duration-300 ease-in-out flex justify-center items-center ${
               loading ? 'opacity-50 cursor-not-allowed' : ''
             }`}

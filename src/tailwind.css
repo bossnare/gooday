@@ -3,7 +3,7 @@
 
 @layer base {
   body {
-    @apply py-2 px-1;
+    @apply bg-slate-950;
   }
   button {
     cursor: pointer;
