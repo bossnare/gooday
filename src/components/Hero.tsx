@@ -3,7 +3,7 @@ import { API_URL } from '@/utils/constants';
 import Button from './ui/Button';
 import { useState } from 'react';
 import randomCity from '@/utils/randomCity';
-import type { WeatherData } from '@/types/propTypes';
+import type { WeatherData } from '@/types/data/api';
 import { roundFormat } from '@/utils/roundFormat';
 import { Search } from 'lucide-react';
 

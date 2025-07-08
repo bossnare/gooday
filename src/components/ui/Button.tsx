@@ -1,4 +1,4 @@
-import type { ButtonProps } from '@/types/propTypes';
+import type { ButtonProps } from '@/types/ui/button';
 import SpinLoader from './SpinLoader';
 
 const Button = ({ label, className, onClick, loading }: ButtonProps) => {

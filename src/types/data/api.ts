@@ -1,11 +1,4 @@
-type ButtonProps = {
-  label: string;
-  className?: string;
-  onClick?: () => void;
-  loading?: boolean;
-};
-
-type WeatherData = {
+interface WeatherData {
   location: {
     name: string;
     country: string;
@@ -26,6 +19,6 @@ type WeatherData = {
     code: number;
     message: string;
   };
-};
+}
 
-export type { ButtonProps, WeatherData };
+export type { WeatherData };
