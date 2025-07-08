@@ -1,8 +1,8 @@
+import { pwaConfig } from './src/configs/pwa.config';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
-import { VitePWA } from 'vite-plugin-pwa';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -10,58 +10,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     // PWA configuration start
-    // This plugin is used to configure the Progressive Web App (PWA) features
-    VitePWA({
-      registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
-      manifest: {
-        name: 'Gooday App',
-        short_name: 'Gooday',
-        description: 'A simple weather app to check the weather of any city.',
-        theme_color: '#000000',
-        start_url: '/',
-        display: 'standalone',
-        background_color: '#000000', // fanampin'ny theme_color
-
-        icons: [
-          {
-            src: '/icon_x192.png',
-            sizes: '192x192',
-            type: 'image/png',
-          },
-          {
-            src: '/icon_x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-          },
-        ],
-      },
-      // This is the configuration for the service worker
-      // It includes caching strategies and other PWA features
-      workbox: {
-        navigateFallback: undefined, // Disable navigate fallback for SPA
-        globPatterns: ['**/*.{js,css,html,png,jpg,svg,ico}'],
-        runtimeCaching: [
-          {
-            urlPattern: /^https:\/\/api\.weatherapi\.com\//,
-            handler: 'NetworkFirst',
-            options: {
-              cacheName: 'weather-api-cache',
-              expiration: {
-                maxEntries: 50, // Maximum number of entries in the cache
-                maxAgeSeconds: 24 * 60 * 60, // 1 day
-              },
-            },
-          },
-        ],
-      },
-      devOptions: {
-        enabled: true, // Enable PWA in development mode
-        type: 'module', // Use module type for service worker
-      },
-      injectRegister: 'auto', // Automatically inject the service worker registration script
-      // This option allows the PWA to be registered automatically
-    }),
+    pwaConfig,
     // PWA configuration end
   ],
   server: {
