@@ -1,4 +1,4 @@
-import { pwaPlugin } from './src/configs/pwa.config';
+// import { pwaPlugin } from './src/configs/pwa.config';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
@@ -10,7 +10,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     // PWA configuration start
-    pwaPlugin,
+    // pwaPlugin,
     // PWA configuration end
   ],
   server: {

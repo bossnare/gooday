@@ -6,6 +6,7 @@ import randomCity from '@/utils/randomCity';
 import type { WeatherData } from '@/types/data/api';
 import { roundFormat } from '@/utils/roundFormat';
 import { Search } from 'lucide-react';
+import { Test } from './Test';
 
 const Hero = () => {
   // This component fetches weather data for a random city when the button is clicked
@@ -77,6 +78,8 @@ const Hero = () => {
           loading={loading}
         />
       </div>
+
+      <Test />
     </section>
   );
 };
