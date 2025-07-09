@@ -8,7 +8,7 @@ export const Test = () => {
   return (
     <div>
       {isLoading && <p>Loading...</p>}
-      <h1>{data.location.name}</h1>
+      <h1>{data?.location?.name}</h1>
       {error && <p>Error fetching data</p>}
     </div>
   );

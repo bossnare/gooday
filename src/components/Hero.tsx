@@ -42,7 +42,7 @@ const Hero = () => {
         <h1>A Weather App</h1>
       </div>
       <div className="prose max-w-0 w-90 min-w-[95%] bg-black/50 rounded-md p-4">
-        <div className="w-full border-2 rounded-md p-0.5 focus:has-[input]:ring-gray-200 focus:has-[input]:ring-2 flex">
+        <div className="w-full border-2 rounded-md p-1 focus:has-[input]:ring-gray-200 focus:has-[input]:ring-2 flex">
           <input
             id="is"
             placeholder="Type a city"
