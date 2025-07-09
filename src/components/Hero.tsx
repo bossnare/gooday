@@ -3,15 +3,16 @@ import { API_URL } from '@/utils/constants';
 import randomCity from '@/utils/randomCity';
 import { roundFormat } from '@/utils/roundFormat';
 import { Search } from 'lucide-react';
-import { Test } from './Test';
 import Button from './ui/Button';
+import { useState } from 'react';
 
 const Hero = () => {
+  const [enable, setEnabled] = useState(false);
   // This component fetches weather data for a random city when the button is clicked
-  // const [loading, setLoading] = useState(false);
   // const [info, setInfo] = useState<WeatherData | null>(null);
   const { data, error, isLoading } = useFetch(
-    `${API_URL}&q=${randomCity() || 'Antananarivo'}&aqi=no`
+    `${API_URL}&q=${randomCity() || 'Antananarivo'}&aqi=no`,
+    enable
   );
 
   const { country, name } = data?.location || {
@@ -20,23 +21,11 @@ const Hero = () => {
   };
 
   // function for fetching weather data for a random city
-  // const fetchWeatherData = async () => {
-
-  // try {
-  //   setLoading(true);
-  //   const data = await fetcher(
-  //     `${API_URL}&q=${randomCity() || 'Antananarivo'}&aqi=no`
-  //   );
-  //   if (!data.length) {
-  //     console.log('Data:', data);
-  //     setInfo(data);
-  //   }
-  // } catch (error) {
-  //   console.error('Error fetching weather data:', error);
-  // } finally {
-  //   setLoading(false);
-  // }
-  // };
+  const fetchWeatherData = () => {
+    console.log(data);
+    console.log(error);
+    setEnabled(true);
+  };
 
   return (
     <section className=" mx-auto w-full flex flex-col gap-10 items-center justify-center h-screen">
@@ -77,9 +66,9 @@ const Hero = () => {
             </span>
           </>
         )}
-        {error && <p>{error.name}</p>}
+        {error && <p className="text-red-400">Reéssayer</p>}
         <Button
-          // onClick={fetchWeatherData}
+          onClick={fetchWeatherData}
           className={`bg-indigo-700 text-white mt-2
             hover:bg-indigo-800 focus:bg-indigo-900
             focus:outline-none focus:ring-2 focus:ring-indigo-500
@@ -90,8 +79,6 @@ const Hero = () => {
           loading={isLoading}
         />
       </div>
-
-      <Test />
     </section>
   );
 };
