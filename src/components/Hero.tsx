@@ -58,7 +58,10 @@ const Hero = () => {
         </div>
 
         {isLoading ? (
-          <p>Loading ...</p>
+          <div className="animate-pulse w-full flex-col md:flex-row flex gap-4 py-2">
+            <div className="w-60 h-10 bg-gray-400"></div>
+            <div className="w-30 h-10 bg-gray-300"></div>
+          </div>
         ) : (
           <>
             <h1>
