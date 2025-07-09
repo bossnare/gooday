@@ -49,7 +49,7 @@ const Hero = () => {
             id="is"
             placeholder="Type a city"
             type="search"
-            className="p-2 grow-1 focus:outline-hidden"
+            className=" grow-1 focus:outline-hidden"
             name="customSearch"
           />
           <button className="w-auto rounded-md p-2 bg-gray-200 flex justify-center ">
