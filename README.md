@@ -11,6 +11,7 @@ You can...
 **React**: logic frontend
 **Tailwindcss**: styling
 **Vite**: build tool & dev tool
+**Supabase**: OAuth
 
 ## API
 
