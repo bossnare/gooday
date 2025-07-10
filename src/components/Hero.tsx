@@ -43,7 +43,7 @@ const Hero = () => {
       </div>
       <div className="prose max-w-0 w-90 min-w-[95%] rounded-md p-4">
         <form onSubmit={fetchWeatherData}>
-          <div className="lg:w-1/2 mx-auto mb-1 border-2 border-gray-500 rounded-md p-1 md:p-2 focus:has-[input]:ring-gray-200 focus:has-[input]:ring-2 flex">
+          <div className="md:w-1/2 mx-auto mb-1 border-2 border-gray-500 rounded-md p-1 md:p-2 focus:has-[input]:ring-gray-200 focus:has-[input]:ring-2 flex">
             <input
               onChange={handleChange}
               id="is"
@@ -65,13 +65,13 @@ const Hero = () => {
         </form>
 
         {isLoading ? (
-          <div className="animate-pulse lg:w-1/2 w-full flex-col md:flex-row flex gap-4 py-2">
+          <div className="animate-pulse md:w-1/2 w-full flex-col md:flex-row flex gap-4 py-2">
             <div className="w-60 h-10 bg-gray-400"></div>
             <div className="w-30 h-10 bg-gray-300"></div>
           </div>
         ) : (
           data && (
-            <div className="lg:mx-auto lg:w-1/2">
+            <div className="md:mx-auto md:w-1/2">
               <h1>
                 <span>{name}</span> -{' '}
                 <span className="text-slate-500">{country}</span>
