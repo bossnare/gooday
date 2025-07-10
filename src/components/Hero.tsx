@@ -34,16 +34,16 @@ const Hero = () => {
   }
 
   return (
-    <section className="mx-auto w-full flex flex-col gap-10 items-center justify-center h-screen">
+    <section className="mx-auto w-full min-h-[100dvh] flex flex-col gap-10 items-center justify-center h-screen">
       <div className="prose text-center">
         <h1>
           {' '}
           <span className="text-blue-500">Weather</span> App
         </h1>
       </div>
-      <div className="prose max-w-0 w-90 min-w-[95%] rounded-md p-4">
+      <div className="prose max-w-0 min-w-[95%] rounded-md p-4">
         <form onSubmit={fetchWeatherData}>
-          <div className="md:w-1/2 mx-auto mb-1 border-2 border-gray-500 rounded-md p-1 md:p-2 focus:has-[input]:ring-gray-200 focus:has-[input]:ring-2 flex">
+          <div className="md:w-[60%] mx-auto mb-1 border-2 border-gray-500 rounded-md p-1 md:p-2 focus:has-[input]:ring-gray-200 focus:has-[input]:ring-2 flex">
             <input
               onChange={handleChange}
               id="is"
@@ -65,13 +65,13 @@ const Hero = () => {
         </form>
 
         {isLoading ? (
-          <div className="animate-pulse md:w-1/2 w-full flex-col md:flex-row flex gap-4 py-2">
+          <div className="animate-pulse md:w-[60%] md:mx-auto w-full flex-col md:flex-row flex gap-4 py-2">
             <div className="w-60 h-10 bg-gray-400"></div>
             <div className="w-30 h-10 bg-gray-300"></div>
           </div>
         ) : (
           data && (
-            <div className="md:mx-auto md:w-1/2">
+            <div className="md:mx-auto md:w-[60%]">
               <h1>
                 <span>{name}</span> -{' '}
                 <span className="text-slate-500">{country}</span>
@@ -94,7 +94,7 @@ const Hero = () => {
         )}
 
         {!data && !isLoading && (
-          <div className="md:w-1/2 mx-auto flex flex-col text-center items-center text-gray-500">
+          <div className="md:w-[60%] mx-auto flex flex-col text-center items-center text-gray-500">
             <p>
               Please enter the name of a city above and press the search button
               to view the current weather information for your chosen location.

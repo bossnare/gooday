@@ -2,7 +2,7 @@ import Hero from './Hero';
 
 const Main = () => {
   return (
-    <main className="container w-full flex justify-center">
+    <main className="container">
       <Hero />
     </main>
   );
