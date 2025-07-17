@@ -4,7 +4,7 @@ function App() {
   return (
     <>
       <header className="w-full fixed bg-gray-50 flex justify-center border-b-1 border-b-gray-100">
-        <nav className=" container px-10 w-full flex items-center gap-2">
+        <nav className=" md:container px-4 md:px-10 py-2 w-full flex items-center gap-2">
           <img
             src="/nav_icon_x32.png"
             alt="logo"
