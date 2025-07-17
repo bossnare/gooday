@@ -23,6 +23,7 @@ const Hero = () => {
   // Corrige la logique pour activer la recherche uniquement si une ville est saisie
   const fetchWeatherData = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    searchTem.trim();
     if (searchTem.trim().length > 0) {
       setEnabledd(true);
     }
@@ -59,7 +60,11 @@ const Hero = () => {
               className="w-auto rounded-md p-2 bg-gray-100 flex justify-center active:bg-gray-200 hover:bg-gray-300"
               disabled={isLoading || !searchTem.trim() || enabled}
             >
-              <Search color="gray" />
+              {isLoading ? (
+                <div className="size-5 animate-spin rounded-full border-b-transparent border-3 border-gray-400"></div>
+              ) : (
+                <Search color="gray" />
+              )}
             </button>
           </div>
         </form>
@@ -93,6 +98,12 @@ const Hero = () => {
           )
         )}
 
+        {error && !isLoading && (
+          <div className="text-red-400 block md:mx-auto w-[60%]">
+            {error.message}
+          </div>
+        )}
+
         {!data && !isLoading && (
           <div className="md:w-[60%] mx-auto flex flex-col text-center items-center text-gray-500">
             <p>
@@ -102,7 +113,6 @@ const Hero = () => {
             <Binoculars size={40} />
           </div>
         )}
-        {error && <p className="text-red-400">Réessayer</p>}
       </div>
     </section>
   );
