@@ -44,11 +44,14 @@ const Hero = () => {
       </div>
       <div className="prose max-w-0 min-w-[95%] rounded-md p-4">
         <form onSubmit={fetchWeatherData}>
-          <div className="md:w-[60%] mx-auto mb-1 border-2 border-gray-500 rounded-md p-1 md:p-2 focus:has-[input]:ring-gray-200 focus:has-[input]:ring-2 flex">
+          <div
+            className="md:w-[60%] mx-auto mb-1 border-2 border-gray-400 rounded-md p-1 md:p-2 
+          has-[input:focus]:ring-gray-300 has-[input:focus]:ring-2 flex transition-all duration-300 ease-in-out"
+          >
             <input
               onChange={handleChange}
               id="is"
-              placeholder="Please enter the name of a city..."
+              placeholder="Enter the name of a city..."
               type="search"
               className="bg-transparent grow-1 focus:outline-hidden"
               name="customSearch"
@@ -63,7 +66,7 @@ const Hero = () => {
               {isLoading ? (
                 <div className="border-gray-400 rounded-full size-5 animate-spin border-b-transparent border-3"></div>
               ) : (
-                <Search color="gray" />
+                <Search className="text-gray-400" strokeWidth={3} />
               )}
             </button>
           </div>
