@@ -1,4 +1,5 @@
 import useFetch from '@/hooks/useFetch';
+import { setHistory } from '@/libs/setHistory.data';
 import { API_URL } from '@/utils/constants';
 import { roundFormat } from '@/utils/roundFormat';
 import { Binoculars, Search, Split, ThermometerSun } from 'lucide-react';
@@ -20,31 +21,14 @@ const Hero = () => {
     name: '',
   };
 
+  // set search history
+  useEffect(() => {
+    setHistory(data, error, searchTerm, name, country);
+  }, [data, error, searchTerm, name, country]);
+
   function handleSearch() {
     setEnabled(true);
   }
-
-  useEffect(() => {
-    if (!error && data && !data?.error) {
-      const history = JSON.parse(localStorage.getItem('history') || '[]');
-      const updatedHistory = [
-        ...history,
-        {
-          id: Date.now(),
-          search: searchTerm,
-          city: data && data?.location?.name,
-          country: data && data?.location?.country,
-          result: data ? true : false,
-        },
-      ];
-
-      localStorage.setItem('history', JSON.stringify(updatedHistory));
-      console.log('local:', JSON.stringify(localStorage.getItem('history')));
-      console.log(data);
-    } else {
-      return;
-    }
-  }, [data, error, searchTerm]);
 
   // Corrige la logique pour activer la recherche uniquement si une ville est saisie
   const fetchWeatherData = (e: React.FormEvent<HTMLFormElement>) => {
