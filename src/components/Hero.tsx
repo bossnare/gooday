@@ -46,7 +46,7 @@ const Hero = () => {
         <form onSubmit={fetchWeatherData}>
           <div
             className="md:w-[60%] mx-auto mb-1 border-2 border-gray-400 rounded-md p-1 md:p-2 
-          has-[input:focus]:ring-gray-300 has-[input:focus]:ring-2 flex transition-all duration-300 ease-in-out"
+          has-[input:focus]:ring-blue-300 has-[input:focus]:ring-2 has-[input:focus]:border-gray-200 flex transition-all duration-300 ease-in-out"
           >
             <input
               onChange={handleChange}
