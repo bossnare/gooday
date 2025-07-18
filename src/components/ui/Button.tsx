@@ -9,7 +9,7 @@ const Button = ({ label, className, onClick, loading }: ButtonProps) => {
     >
       {loading && (
         <span>
-          <SpinLoader className="size-5 border-gray-400" />
+          <SpinLoader className="border-gray-400 size-5" />
         </span>
       )}
       {!loading && label}

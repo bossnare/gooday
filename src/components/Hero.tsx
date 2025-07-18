@@ -1,7 +1,7 @@
 import useFetch from '@/hooks/useFetch';
 import { API_URL } from '@/utils/constants';
 import { roundFormat } from '@/utils/roundFormat';
-import { Search, ThermometerSun, Split, Binoculars } from 'lucide-react';
+import { Binoculars, Search, Split, ThermometerSun } from 'lucide-react';
 import { useState } from 'react';
 
 // ...existing code...
