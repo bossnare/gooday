@@ -50,18 +50,18 @@ const Hero = () => {
               id="is"
               placeholder="Please enter the name of a city..."
               type="search"
-              className="grow-1 focus:outline-hidden bg-transparent"
+              className="bg-transparent grow-1 focus:outline-hidden"
               name="customSearch"
               value={searchTem}
               disabled={isLoading}
             />
             <button
               type="submit"
-              className="w-auto rounded-md p-2 bg-gray-100 flex justify-center active:bg-gray-200 hover:bg-gray-300"
+              className="flex justify-center w-auto p-2 bg-gray-100 rounded-md active:bg-gray-200 hover:bg-gray-300"
               disabled={isLoading || !searchTem.trim() || enabled}
             >
               {isLoading ? (
-                <div className="size-5 animate-spin rounded-full border-b-transparent border-3 border-gray-400"></div>
+                <div className="border-gray-400 rounded-full size-5 animate-spin border-b-transparent border-3"></div>
               ) : (
                 <Search color="gray" />
               )}
@@ -71,8 +71,8 @@ const Hero = () => {
 
         {isLoading ? (
           <div className="animate-pulse md:w-[60%] md:mx-auto w-full flex-col md:flex-row flex gap-4 py-2">
-            <div className="w-60 h-10 bg-gray-400"></div>
-            <div className="w-30 h-10 bg-gray-300"></div>
+            <div className="h-10 bg-gray-400 w-60"></div>
+            <div className="h-10 bg-gray-300 w-30"></div>
           </div>
         ) : (
           data && (
