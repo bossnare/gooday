@@ -1,4 +1,5 @@
 import Main from './components/Main';
+import AppRoutes from './Routes';
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
         </nav>
       </header>
       <Main />
+      {/* routes */}
+      <AppRoutes />
     </>
   );
 }
