@@ -2,16 +2,16 @@ import useFetch from '@/hooks/useFetch';
 import { API_URL } from '@/utils/constants';
 import { roundFormat } from '@/utils/roundFormat';
 import { Binoculars, Search, Split, ThermometerSun } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // ...existing code...
 // Corrige la gestion du formulaire et du bouton de recherche météo
 
 const Hero = () => {
-  const [enabled, setEnabledd] = useState(false);
-  const [searchTem, setSearchTem] = useState<string>('');
+  const [enabled, setEnabled] = useState(false);
+  const [searchTerm, setSearchTerm] = useState<string>('');
   const { data, error, isLoading } = useFetch(
-    `${API_URL}&q=${searchTem}&aqi=no`,
+    `${API_URL}&q=${searchTerm}&aqi=no`,
     enabled
   );
 
@@ -20,18 +20,45 @@ const Hero = () => {
     name: '',
   };
 
+  function handleSearch() {
+    setEnabled(true);
+  }
+
+  useEffect(() => {
+    if (!error && data) {
+      const history = JSON.parse(localStorage.getItem('history') || '[]');
+      const updatedHistory = [
+        ...history,
+        {
+          id: Date.now(),
+          search: searchTerm,
+          city: data && data?.location?.name,
+          country: data && data?.location?.country,
+          result: data ? true : false,
+        },
+      ];
+
+      localStorage.setItem('history', JSON.stringify(updatedHistory));
+      console.log('local:', JSON.stringify(localStorage.getItem('history')));
+      console.log(data);
+    } else {
+      return;
+    }
+  }, [data, error, searchTerm]);
+
   // Corrige la logique pour activer la recherche uniquement si une ville est saisie
   const fetchWeatherData = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    searchTem.trim();
-    if (searchTem.trim().length > 0) {
-      setEnabledd(true);
+    searchTerm.trim();
+
+    if (searchTerm.trim().length > 0) {
+      handleSearch();
     }
   };
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setSearchTem(e.target.value);
-    setEnabledd(false); // Désactive la recherche tant qu'on édite
+    setSearchTerm(e.target.value);
+    setEnabled(false); // Désactive la recherche tant qu'on édite
   }
 
   return (
@@ -55,13 +82,13 @@ const Hero = () => {
               type="search"
               className="bg-transparent grow-1 focus:outline-hidden"
               name="customSearch"
-              value={searchTem}
+              value={searchTerm}
               disabled={isLoading}
             />
             <button
               type="submit"
               className="flex justify-center w-auto p-2 bg-gray-100 rounded-md active:bg-gray-200 hover:bg-gray-300"
-              disabled={isLoading || !searchTem.trim() || enabled}
+              disabled={isLoading || !searchTerm.trim() || enabled}
             >
               {isLoading ? (
                 <div className="border-gray-400 rounded-full size-5 animate-spin border-b-transparent border-3"></div>
