@@ -25,7 +25,7 @@ const Hero = () => {
   }
 
   useEffect(() => {
-    if (!error && data) {
+    if (!error && data && !data?.error) {
       const history = JSON.parse(localStorage.getItem('history') || '[]');
       const updatedHistory = [
         ...history,
