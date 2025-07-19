@@ -38,7 +38,7 @@ function App() {
             isSown
               ? ' bg-black/50 opacity-100'
               : 'opacity-0 pointer-events-none'
-          }  lg:sticky lg:bg-transparent lg:pointer-events-auto h-full lg:h-auto lg:opacity-100 fixed transition-opacity duration-800 ease-in-out`}
+          }  lg:sticky lg:bg-transparent lg:pointer-events-auto h-full lg:h-auto lg:opacity-100 fixed transition-opacity duration-400 ease-in-out`}
         >
           <div
             className={`${
