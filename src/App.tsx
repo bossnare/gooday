@@ -67,7 +67,7 @@ function App() {
                 <ul className="list-none">
                   {history.map((hist) => (
                     <li key={hist.id}>
-                      <div className="px-2 border-2 rounded-md border-gray-100">
+                      <div className="px-2 border-2 bg-gray-50 rounded-md border-gray-100">
                         <h4>
                           {hist.city} - {hist.country}
                         </h4>
