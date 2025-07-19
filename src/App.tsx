@@ -72,7 +72,7 @@ function App() {
                           {hist.city} - {hist.country}
                         </h4>
                         <p>
-                          search with{' '}
+                          You searched for{' '}
                           <span className="text-blue-500">'{hist.search}'</span>
                         </p>
                       </div>
