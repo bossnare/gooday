@@ -1,3 +1,3 @@
 export const roundFormat = (num: number) => {
-  return Math.floor(num);
+  return Math.round(num);
 };

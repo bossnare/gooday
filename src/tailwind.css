@@ -4,7 +4,7 @@
 @layer base {
   body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    @apply bg-gray-50 p-0 m-0;
+    @apply p-0 m-0 bg-gray-50 text-black/70;
   }
 
   html {

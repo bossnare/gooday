@@ -2,7 +2,7 @@ import Hero from './Hero';
 
 const Main = () => {
   return (
-    <main className="container">
+    <main className="container w-auto grow-1">
       <Hero />
     </main>
   );
