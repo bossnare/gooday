@@ -23,16 +23,14 @@ function App() {
       </header>
       <div className="flex">
         <aside
-          // onClick={(e) => {
-          //   e.stopPropagation();
-          //   setIsSown(!isSown);
-          // }}
           className={`lg:w-[20%] ${
             isSown ? 'w-full bg-black/50 opacity-100' : 'opacity-0 w-0'
-          }  lg:sticky h-full lg:h-auto lg:opacity-100 fixed overflow-y-auto transition-all duration-200 ease-in-out`}
+          }  lg:sticky h-full lg:h-auto lg:opacity-100 fixed overflow-y-auto transition-opacity duration-100 ease-in-out`}
         >
           <div
-            className={`bg-gray-100 w-1/2 lg:w-full px-4 h-full flex flex-col`}
+            className={`${
+              isSown ? 'w-3/4' : 'w-0 px-0'
+            } bg-gray-100 lg:w-full px-4 h-full flex flex-col transition-all duration-200 ease-in-out`}
           >
             <div className="flex items-center">
               <img
