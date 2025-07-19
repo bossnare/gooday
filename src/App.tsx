@@ -23,14 +23,16 @@ function App() {
       </header>
       <div className="flex">
         <aside
-          className={`lg:w-[20%] ${
-            isSown ? 'w-full bg-black/50 opacity-100' : 'opacity-0 w-0'
-          }  lg:sticky h-full lg:h-auto lg:opacity-100 fixed overflow-y-auto transition-opacity duration-100 ease-in-out`}
+          className={`lg:w-[20%] w-full ${
+            isSown
+              ? ' bg-black/50 opacity-100'
+              : 'opacity-0 pointer-events-none'
+          }  lg:sticky lg:bg-transparent lg:pointer-events-auto h-full lg:h-auto lg:opacity-100 fixed overflow-y-auto transition-opacity duration-300 ease-in-out`}
         >
           <div
             className={`${
-              isSown ? 'w-3/4' : 'w-0 px-0'
-            } bg-gray-100 lg:w-full px-4 h-full flex flex-col transition-all duration-200 ease-in-out`}
+              isSown ? 'translate-x-0' : '-translate-x-full px-0'
+            } bg-gray-100 w-5/6 lg:translate-x-0 lg:w-full px-4 h-full flex flex-col transition-transform duration-200 ease-in-out`}
           >
             <div className="flex items-center">
               <img
