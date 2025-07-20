@@ -31,7 +31,7 @@ function App() {
         {/* Overlay */}
         <div
           onClick={() => setIsSown(false)}
-          className={`fixed inset-0 z-5 lg:hidden transition-opacity duration-300 ${
+          className={`fixed inset-0 z-50 lg:hidden transition-opacity duration-300 ${
             isSown
               ? ' bg-black/40 opacity-100'
               : 'opacity-0 pointer-events-none'
@@ -58,7 +58,7 @@ function App() {
               </button>
             </div>
 
-            <div className="h-full px-4 mt-3 mb-5 overflow-y-auto prose prose-gray grow-1 scroll-smooth">
+            <div className="px-4 mt-3 mb-5 overflow-y-auto prose prose-gray grow-1 scroll-smooth">
               <h3 className="flex items-center gap-4 text-gray-500">
                 Search history <History />
               </h3>
