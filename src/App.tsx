@@ -40,7 +40,7 @@ function App() {
               isSown ? 'translate-x-0' : '-translate-x-full px-0'
             } bg-white w-5/6 lg:translate-x-0 lg:w-full h-full flex flex-col transition-transform duration-400 ease-in-out`}
           >
-            <div className="flex items-center py-1 border-b-1 border-b-gray-100">
+            <div className="flex items-center py-1 border-b-1 border-b-gray-100 pr-2">
               <img
                 src="/nav_icon_x32.png"
                 alt="logo"
