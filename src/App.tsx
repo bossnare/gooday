@@ -38,7 +38,7 @@ function App() {
           <div
             className={`${
               isSown ? 'translate-x-0' : '-translate-x-full px-0'
-            } bg-white w-5/6 lg:translate-x-0 lg:w-full px-4 h-full flex flex-col transition-transform duration-400 ease-in-out`}
+            } bg-white w-5/6 lg:translate-x-0 lg:w-full h-full flex flex-col transition-transform duration-400 ease-in-out`}
           >
             <div className="flex items-center py-1 border-b-1 border-b-gray-100">
               <img
