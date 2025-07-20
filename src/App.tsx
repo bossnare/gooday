@@ -38,9 +38,9 @@ function App() {
           <div
             className={`${
               isSown ? 'translate-x-0' : '-translate-x-full px-0'
-            } bg-white w-5/6 lg:translate-x-0 lg:w-full px-4 h-full py-1 flex flex-col transition-transform duration-400 ease-in-out border-b-1 border-b-gray-100`}
+            } bg-white w-5/6 lg:translate-x-0 lg:w-full px-4 h-full flex flex-col transition-transform duration-400 ease-in-out`}
           >
-            <div className="flex items-center py-2">
+            <div className="flex items-center py-1 border-b-1 border-b-gray-100">
               <img
                 src="/nav_icon_x32.png"
                 alt="logo"
