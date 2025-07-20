@@ -1,5 +1,5 @@
 import type { HistoryData } from '@/types/data/history';
-import { StretchHorizontal } from 'lucide-react';
+import { StretchHorizontal, History } from 'lucide-react';
 import { useState } from 'react';
 import HistoryCard from './components/HistoryCard';
 import Main from './components/Main';
@@ -52,10 +52,13 @@ function App() {
               </button>
             </div>
 
-            <div className="h-full px-2 mb-5 overflow-y-auto prose prose-gray grow-1 scroll-smooth">
-              <h3>Search history</h3>
+            <div className="h-full px-4 mt-3 mb-5 overflow-y-auto prose prose-gray grow-1 scroll-smooth">
+              <h3 className="flex items-center gap-4 text-gray-500">
+                Search history <History />
+              </h3>
+
               {history.length > 0 ? (
-                <ul className="h-auto p-0 pt-1 list-none border-gray-200 divide-y divide-gray-200 border-1">
+                <ul className="h-auto p-0 rounded-lg *:m-0 pt-1 list-none border-gray-200 divide-y divide-gray-200 border-1">
                   {history.map((hist) => (
                     <HistoryCard key={hist.id} {...hist} />
                   ))}
