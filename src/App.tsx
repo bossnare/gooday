@@ -38,7 +38,7 @@ function App() {
           <div
             className={`${
               isSown ? 'translate-x-0' : '-translate-x-full px-0'
-            } bg-white w-5/6 lg:translate-x-0 lg:w-full px-4 h-full flex flex-col transition-transform duration-400 ease-in-out`}
+            } bg-white w-5/6 lg:translate-x-0 lg:w-full px-4 h-full py-1 flex flex-col transition-transform duration-400 ease-in-out border-b-1 border-b-gray-100`}
           >
             <div className="flex items-center py-2">
               <img
@@ -57,7 +57,7 @@ function App() {
             </div>
 
             <div className="h-full px-2 mb-5 overflow-y-auto prose grow-1 scroll-smooth">
-              <h3>Dearch history</h3>
+              <h3>Search history</h3>
               {history.length > 0 ? (
                 <ul className="h-auto pt-2 pb-5 pl-2 list-none">
                   {history.map((hist) => (
