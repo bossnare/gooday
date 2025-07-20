@@ -31,7 +31,7 @@ function App() {
         <aside
           className={`lg:w-[25%] w-full z-10 border-r-1 border-r-gray-100 ${
             isSown
-              ? ' bg-black/50 opacity-100'
+              ? ' bg-black/40 opacity-100'
               : 'opacity-0 pointer-events-none'
           }  lg:sticky lg:bg-transparent lg:pointer-events-auto h-full lg:h-auto lg:opacity-100 fixed transition-opacity duration-400 ease-in-out`}
         >
@@ -56,8 +56,8 @@ function App() {
               </button>
             </div>
 
-            <div className="h-full px-2 mb-5 overflow-y-auto prose border-gray-200 rounded-md border-1 grow-1 scroll-smooth">
-              <h4>History</h4>
+            <div className="h-full px-2 mb-5 overflow-y-auto prose grow-1 scroll-smooth">
+              <h5>History</h5>
               {history.length > 0 ? (
                 <ul className="h-auto pt-5 pb-10 pl-2 list-none">
                   {history.map((hist) => (
