@@ -7,7 +7,7 @@
     font-family: 'Inter', sans-serif;
     /* font-optical-sizing: auto;
     font-style: normal; */
-    @apply p-0 m-0 bg-gray-50 text-gray-900;
+    @apply p-0 m-0 text-gray-900 bg-gray-50;
   }
 
   html {
@@ -35,7 +35,7 @@
   }
 
   .icon {
-    @apply p-2 border-gray-200 rounded-full bg-gray-50 border-1 active:text-gray-400;
+    @apply p-1.5 border-gray-200 rounded-md border-1 active:text-gray-400;
   }
 
   .text-title {

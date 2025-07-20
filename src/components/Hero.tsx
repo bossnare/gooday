@@ -53,7 +53,7 @@ const Hero = () => {
   }
 
   return (
-    <section className="mx-auto mt-10 w-full min-h-[100dvh] flex flex-col gap-10 items-center justify-center">
+    <section className="flex flex-col items-center justify-center w-full min-h-screen gap-10 mx-auto mt-10">
       <div className="prose text-center">
         <h1>
           {' '}
@@ -61,10 +61,10 @@ const Hero = () => {
           <div className="text-gray-800">Weather App</div>
         </h1>
       </div>
-      <div className="prose max-w-0 min-w-[95%] rounded-md p-4">
+      <div className="prose max-w-0 min-w-[95%]">
         <form onSubmit={fetchWeatherData}>
           <div
-            className="md:w-[60%] mx-auto mb-1 border-2 border-gray-400 rounded-md p-2 
+            className="md:w-[70%] mx-auto mb-1 border-2 border-gray-400 rounded-md p-2 
           has-[input:focus]:ring-gray-600 has-[input:focus]:ring-2 has-[input:focus]:border-gray-200 flex transition-all duration-300 ease-in-out"
           >
             <input
@@ -79,7 +79,7 @@ const Hero = () => {
             />
             <button
               type="submit"
-              className="flex justify-center w-auto p-2 bg-gray-100 rounded-md active:bg-gray-200 hover:bg-gray-300"
+              className="flex justify-center p-3 bg-gray-100 rounded-md grow-0 active:bg-gray-200 hover:bg-gray-300"
               disabled={isLoading || !searchTerm.trim() || enabled}
             >
               {isLoading ? (

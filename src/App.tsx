@@ -1,5 +1,5 @@
 import type { HistoryData } from '@/types/data/history';
-import { AlignJustify } from 'lucide-react';
+import { StretchHorizontal } from 'lucide-react';
 import { useState } from 'react';
 import HistoryCard from './components/HistoryCard';
 import Main from './components/Main';
@@ -13,10 +13,10 @@ function App() {
 
   return (
     <>
-      <header className="fixed flex justify-center w-full bg-white border-b-1 top-0 left-0 border-b-gray-100">
-        <nav className="flex items-center w-full gap-2 px-4 py-1 md:container md:px-10">
+      <header className="fixed top-0 left-0 flex justify-center w-full bg-white border-b-1 border-b-gray-100">
+        <nav className="flex items-center w-full gap-2 px-4 py-1 md:container">
           <button className="icon" onClick={() => setIsSown(!isSown)}>
-            <AlignJustify />
+            <StretchHorizontal />
           </button>
           <img src="/nav_icon_x32.svg" alt="logo" className="w-10 lg:w-10" />
 
@@ -36,7 +36,7 @@ function App() {
               isSown ? 'translate-x-0' : '-translate-x-full px-0'
             } bg-white w-5/6 lg:translate-x-0 lg:w-full h-full flex flex-col transition-transform duration-400 ease-in-out`}
           >
-            <div className="flex items-center py-1 border-b-1 border-b-gray-100 px-2">
+            <div className="flex items-center px-2 py-1 border-b-1 border-b-gray-100">
               <img
                 src="/nav_icon_x32.svg"
                 alt="logo"
@@ -48,14 +48,14 @@ function App() {
                 className="ml-auto icon"
                 onClick={() => setIsSown(!isSown)}
               >
-                <AlignJustify />
+                <StretchHorizontal />
               </button>
             </div>
 
             <div className="h-full px-2 mb-5 overflow-y-auto prose prose-gray grow-1 scroll-smooth">
               <h3>Search history</h3>
               {history.length > 0 ? (
-                <ul className="h-auto pt-2 pb-5 pl-2 list-none">
+                <ul className="h-auto p-0 pt-1 list-none border-gray-200 divide-y divide-gray-200 border-1">
                   {history.map((hist) => (
                     <HistoryCard key={hist.id} {...hist} />
                   ))}
