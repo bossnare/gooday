@@ -1,18 +1,13 @@
+import type { HistoryData } from '@/types/data/history';
 import { AlignJustify } from 'lucide-react';
 import { useState } from 'react';
+import HistoryCard from './components/HistoryCard';
 import Main from './components/Main';
 import Button from './components/ui/Button';
 
-type historyData = {
-  id: number;
-  city: string;
-  search: string;
-  country: string;
-};
-
 function App() {
   const [isSown, setIsSown] = useState(false);
-  const history: historyData[] = JSON.parse(
+  const history: HistoryData[] = JSON.parse(
     localStorage.getItem('history') || '[]'
   );
 
@@ -66,17 +61,7 @@ function App() {
               {history.length > 0 ? (
                 <ul className="list-none">
                   {history.map((hist) => (
-                    <li key={hist.id}>
-                      <div className="px-2 border-2 bg-gray-50 rounded-md border-gray-100">
-                        <h4>
-                          {hist.city} - {hist.country}
-                        </h4>
-                        <p>
-                          You searched for{' '}
-                          <span className="text-blue-500">'{hist.search}'</span>
-                        </p>
-                      </div>
-                    </li>
+                    <HistoryCard key={hist.id} {...hist} />
                   ))}
                 </ul>
               ) : (
