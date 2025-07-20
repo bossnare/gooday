@@ -34,7 +34,7 @@ const Hero = () => {
   }, [data, error, searchTerm, name, country, data?.current?.condition?.icon]);
 
   function handleSearch() {
-    setEnabled(true);
+    setEnabled(true); // Réinitialise le champ de recherche après la soumission
   }
 
   // Corrige la logique pour activer la recherche uniquement si une ville est saisie
@@ -92,26 +92,26 @@ const Hero = () => {
         </form>
 
         {isLoading ? (
-          <div className="animate-pulse md:w-[60%] md:mx-auto w-full flex-col md:flex-row flex gap-4 py-2">
+          <div className="animate-pulse md:w-[70%] md:mx-auto w-full flex-col md:flex-row flex gap-4 py-2">
             <div className="h-10 bg-gray-400 w-60"></div>
             <div className="h-10 bg-gray-300 w-30"></div>
           </div>
         ) : (
           data && (
-            <div className="md:mx-auto md:w-[60%]">
+            <div className="md:mx-auto md:w-[70%]">
               <h1>
                 <span>{name}</span> -{' '}
-                <span className="text-slate-500">{country}</span>
+                <span className="text-gray-700">{country}</span>
               </h1>
               <span className="inline mr-2">
                 {data?.current?.condition?.text}
-                <img
-                  className="p-0 m-0"
-                  width="64"
-                  height="64"
-                  src={data?.current?.condition?.icon}
-                  alt="icon"
-                />
+                <div className="flex items-center object-contain overflow-hidden size-10">
+                  <img
+                    className="w-full h-full "
+                    src={data?.current?.condition?.icon}
+                    alt={name}
+                  />
+                </div>
               </span>
               <span className="ml-2">
                 <b>
@@ -128,13 +128,13 @@ const Hero = () => {
         )}
 
         {error && !isLoading && (
-          <div className="text-red-400 block md:mx-auto w-[60%]">
+          <div className="text-red-400 block md:mx-auto w-[70%]">
             {error.message}
           </div>
         )}
 
         {!data && !isLoading && (
-          <div className="md:w-[60%] mx-auto flex flex-col text-center items-center text-gray-500">
+          <div className="md:w-[65%] mx-auto flex flex-col text-center items-center text-gray-500">
             <p>
               Please enter the name of a city above and press the search button
               to view the current weather information for your chosen location.

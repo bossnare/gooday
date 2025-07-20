@@ -18,23 +18,33 @@ function App() {
           <button className="icon" onClick={() => setIsSown(!isSown)}>
             <StretchHorizontal />
           </button>
-          <img src="/nav_icon_x32.svg" alt="logo" className="w-10 lg:w-10" />
+          <img
+            src="/nav_icon_x32.svg"
+            alt="logo"
+            className="w-10 ml-4 lg:w-10"
+          />
 
           <h1 className="text-xl font-bold lg:hidden">GOODAY</h1>
         </nav>
       </header>
       <div className="flex">
-        <aside
-          className={`lg:w-[25%] w-full z-10 border-r-1 border-r-gray-100 ${
+        {/* Overlay */}
+        <div
+          onClick={() => setIsSown(false)}
+          className={`fixed inset-0 z-5 lg:hidden transition-opacity duration-300 ${
             isSown
               ? ' bg-black/40 opacity-100'
               : 'opacity-0 pointer-events-none'
-          }  lg:sticky lg:bg-transparent lg:pointer-events-auto top-0 left-0 h-full lg:h-auto lg:opacity-100 fixed transition-opacity duration-400 ease-in-out`}
+          }`}
+        ></div>
+
+        <aside
+          className={`lg:w-[25%] w-full z-10 border-r-1 border-r-gray-100 lg:sticky top-0 left-0 h-full lg:h-auto fixed`}
         >
           <div
             className={`${
               isSown ? 'translate-x-0' : '-translate-x-full px-0'
-            } bg-white w-5/6 lg:translate-x-0 lg:w-full h-full flex flex-col transition-transform duration-400 ease-in-out`}
+            } bg-white w-5/6 lg:translate-x-0 lg:w-full will-change-transform h-full flex flex-col transition-transform duration-400 ease-in-out`}
           >
             <div className="flex items-center px-2 py-1 border-b-1 border-b-gray-100">
               <img
@@ -43,11 +53,7 @@ function App() {
                 className="w-10 lg:w-10"
               />
 
-              <h1 className="hidden text-xl font-bold">GOODAY</h1>
-              <button
-                className="ml-auto icon"
-                onClick={() => setIsSown(!isSown)}
-              >
+              <button className="ml-auto icon" onClick={() => setIsSown(false)}>
                 <StretchHorizontal />
               </button>
             </div>
