@@ -5,7 +5,7 @@ export const pwaPlugin = VitePWA({
   registerType: 'autoUpdate',
   includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
   manifest: {
-    name: 'Gooday App',
+    name: 'Gooday',
     short_name: 'Gooday',
     description: 'A simple weather app to check the weather of any city.',
     theme_color: '#000000',
