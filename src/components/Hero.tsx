@@ -23,8 +23,15 @@ const Hero = () => {
 
   // set search history
   useEffect(() => {
-    setHistory(data, error, searchTerm, name, country);
-  }, [data, error, searchTerm, name, country]);
+    setHistory(
+      data,
+      error,
+      searchTerm,
+      name,
+      country,
+      data?.current?.condition?.icon
+    );
+  }, [data, error, searchTerm, name, country, data?.current?.condition?.icon]);
 
   function handleSearch() {
     setEnabled(true);
@@ -46,18 +53,19 @@ const Hero = () => {
   }
 
   return (
-    <section className="mx-auto w-full min-h-[100dvh] flex flex-col gap-10 items-center justify-center h-screen">
+    <section className="mx-auto mt-10 w-full min-h-[100dvh] flex flex-col gap-10 items-center justify-center">
       <div className="prose text-center">
         <h1>
           {' '}
-          <span className="text-blue-500">Weather</span> App
+          <span className="primary-text-color">GOODAY </span>
+          <div className="text-gray-800">Weather App</div>
         </h1>
       </div>
       <div className="prose max-w-0 min-w-[95%] rounded-md p-4">
         <form onSubmit={fetchWeatherData}>
           <div
             className="md:w-[60%] mx-auto mb-1 border-2 border-gray-400 rounded-md p-1 md:p-2 
-          has-[input:focus]:ring-blue-300 has-[input:focus]:ring-2 has-[input:focus]:border-gray-200 flex transition-all duration-300 ease-in-out"
+          has-[input:focus]:ring-gray-600 has-[input:focus]:ring-2 has-[input:focus]:border-gray-200 flex transition-all duration-300 ease-in-out"
           >
             <input
               onChange={handleChange}
@@ -97,6 +105,13 @@ const Hero = () => {
               </h1>
               <span className="inline mr-2">
                 {data?.current?.condition?.text}
+                <img
+                  className="p-0 m-0"
+                  width="64"
+                  height="64"
+                  src={data?.current?.condition?.icon}
+                  alt="icon"
+                />
               </span>
               <span className="ml-2">
                 <b>

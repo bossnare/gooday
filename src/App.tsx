@@ -13,16 +13,12 @@ function App() {
 
   return (
     <>
-      <header className="fixed flex justify-center w-full bg-white border-b-1 border-b-gray-100">
+      <header className="fixed flex justify-center w-full bg-white border-b-1 top-0 left-0 border-b-gray-100">
         <nav className="flex items-center w-full gap-2 px-4 py-1 md:container md:px-10">
           <button className="icon" onClick={() => setIsSown(!isSown)}>
             <AlignJustify />
           </button>
-          <img
-            src="/nav_icon_x32.png"
-            alt="logo"
-            className="h-auto w-11 lg:w-12"
-          />
+          <img src="/nav_icon_x32.svg" alt="logo" className="w-10 lg:w-10" />
 
           <h1 className="text-xl font-bold lg:hidden">GOODAY</h1>
         </nav>
@@ -33,18 +29,18 @@ function App() {
             isSown
               ? ' bg-black/40 opacity-100'
               : 'opacity-0 pointer-events-none'
-          }  lg:sticky lg:bg-transparent lg:pointer-events-auto h-full lg:h-auto lg:opacity-100 fixed transition-opacity duration-400 ease-in-out`}
+          }  lg:sticky lg:bg-transparent lg:pointer-events-auto top-0 left-0 h-full lg:h-auto lg:opacity-100 fixed transition-opacity duration-400 ease-in-out`}
         >
           <div
             className={`${
               isSown ? 'translate-x-0' : '-translate-x-full px-0'
             } bg-white w-5/6 lg:translate-x-0 lg:w-full h-full flex flex-col transition-transform duration-400 ease-in-out`}
           >
-            <div className="flex items-center py-1 border-b-1 border-b-gray-100 pr-2">
+            <div className="flex items-center py-1 border-b-1 border-b-gray-100 px-2">
               <img
-                src="/nav_icon_x32.png"
+                src="/nav_icon_x32.svg"
                 alt="logo"
-                className="h-auto w-11 lg:w-12"
+                className="w-10 lg:w-10"
               />
 
               <h1 className="hidden text-xl font-bold">GOODAY</h1>
@@ -56,7 +52,7 @@ function App() {
               </button>
             </div>
 
-            <div className="h-full px-2 mb-5 overflow-y-auto prose grow-1 scroll-smooth">
+            <div className="h-full px-2 mb-5 overflow-y-auto prose prose-gray grow-1 scroll-smooth">
               <h3>Search history</h3>
               {history.length > 0 ? (
                 <ul className="h-auto pt-2 pb-5 pl-2 list-none">
@@ -65,16 +61,16 @@ function App() {
                   ))}
                 </ul>
               ) : (
-                <>
+                <div className="pl-2">
                   <p className="!text-gray-500">
                     Nothing search history, please create one. To create this,
                     go to search bar and search your favourite city.
                   </p>
                   <Button
                     label="Create one"
-                    className="text-white bg-blue-500"
+                    className="text-white gradient-bg"
                   />
-                </>
+                </div>
               )}
             </div>
           </div>

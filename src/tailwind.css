@@ -4,8 +4,10 @@
 @layer base {
   body,
   html {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    @apply p-0 m-0 bg-gray-50 text-black/70;
+    font-family: 'Inter', sans-serif;
+    /* font-optical-sizing: auto;
+    font-style: normal; */
+    @apply p-0 m-0 bg-gray-50 text-gray-900;
   }
 
   html {
@@ -24,8 +26,23 @@
     margin: 0 auto;
   }
 
+  .primary-text-color {
+    @apply text-[#00D4FF];
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-r from-[#00D4FF] to-[#8A2BE2] drop-shadow-md;
+  }
+
   .icon {
     @apply p-2 border-gray-200 rounded-full bg-gray-50 border-1 active:text-gray-400;
+  }
+
+  .text-title {
+    @apply text-gray-900;
+  }
+  .text-body {
+    @apply text-gray-700;
   }
 }
 

@@ -5,7 +5,8 @@ export const setHistory = (
   error: string,
   searchTerm: string,
   name: string,
-  country: string
+  country: string,
+  icon: string
 ) => {
   if (!error && data && !data?.error) {
     const history = JSON.parse(localStorage.getItem('history') || '[]');
@@ -16,6 +17,7 @@ export const setHistory = (
         city: data && name,
         country: data && country,
         result: data ? true : false,
+        icon: data && icon,
       },
       ...history,
     ];
