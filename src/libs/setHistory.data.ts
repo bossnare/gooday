@@ -10,7 +10,6 @@ export const setHistory = (
   if (!error && data && !data?.error) {
     const history = JSON.parse(localStorage.getItem('history') || '[]');
     const updatedHistory = [
-      ...history,
       {
         id: Date.now(),
         search: searchTerm,
@@ -18,6 +17,7 @@ export const setHistory = (
         country: data && country,
         result: data ? true : false,
       },
+      ...history,
     ];
 
     localStorage.setItem('history', JSON.stringify(updatedHistory));

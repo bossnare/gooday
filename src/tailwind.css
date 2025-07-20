@@ -2,7 +2,8 @@
 @plugin "@tailwindcss/typography";
 
 @layer base {
-  body {
+  body,
+  html {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     @apply p-0 m-0 bg-gray-50 text-black/70;
   }
@@ -24,7 +25,7 @@
   }
 
   .icon {
-    @apply bg-gray-50 border-1 border-gray-200 rounded-full p-2 active:text-gray-400;
+    @apply p-2 border-gray-200 rounded-full bg-gray-50 border-1 active:text-gray-400;
   }
 }
 

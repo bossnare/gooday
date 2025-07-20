@@ -29,7 +29,7 @@ function App() {
       </header>
       <div className="flex">
         <aside
-          className={`lg:w-[20%] w-full z-10 border-r-1 border-r-gray-100 ${
+          className={`lg:w-[25%] w-full z-10 border-r-1 border-r-gray-100 ${
             isSown
               ? ' bg-black/50 opacity-100'
               : 'opacity-0 pointer-events-none'
@@ -38,7 +38,7 @@ function App() {
           <div
             className={`${
               isSown ? 'translate-x-0' : '-translate-x-full px-0'
-            } bg-white w-5/6 lg:translate-x-0 lg:w-full px-4 h-full flex flex-col overflow-y-auto transition-transform duration-400 ease-in-out`}
+            } bg-white w-5/6 lg:translate-x-0 lg:w-full px-4 h-full flex flex-col transition-transform duration-400 ease-in-out`}
           >
             <div className="flex items-center py-2">
               <img
@@ -56,10 +56,10 @@ function App() {
               </button>
             </div>
 
-            <div className="h-auto px-2 pt-2 prose border-1  border-gray-200 rounded-md grow-1">
+            <div className="h-full px-2 mb-5 overflow-y-auto prose border-gray-200 rounded-md border-1 grow-1 scroll-smooth">
               <h4>History</h4>
               {history.length > 0 ? (
-                <ul className="list-none">
+                <ul className="h-auto pt-5 pb-10 pl-2 list-none">
                   {history.map((hist) => (
                     <HistoryCard key={hist.id} {...hist} />
                   ))}
@@ -72,7 +72,7 @@ function App() {
                   </p>
                   <Button
                     label="Create one"
-                    className="bg-blue-500 text-white"
+                    className="text-white bg-blue-500"
                   />
                 </>
               )}
