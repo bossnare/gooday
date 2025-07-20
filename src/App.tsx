@@ -57,9 +57,9 @@ function App() {
             </div>
 
             <div className="h-full px-2 mb-5 overflow-y-auto prose grow-1 scroll-smooth">
-              <h5>History</h5>
+              <h3>History</h3>
               {history.length > 0 ? (
-                <ul className="h-auto pt-5 pb-10 pl-2 list-none">
+                <ul className="h-auto pt-2 pb-5 pl-2 list-none">
                   {history.map((hist) => (
                     <HistoryCard key={hist.id} {...hist} />
                   ))}
