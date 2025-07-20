@@ -57,7 +57,7 @@ function App() {
             </div>
 
             <div className="h-full px-2 mb-5 overflow-y-auto prose grow-1 scroll-smooth">
-              <h3>History</h3>
+              <h3>Dearch history</h3>
               {history.length > 0 ? (
                 <ul className="h-auto pt-2 pb-5 pl-2 list-none">
                   {history.map((hist) => (
