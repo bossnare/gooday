@@ -2,7 +2,7 @@ import Hero from './Hero';
 
 const Main = () => {
   return (
-    <main className="container w-auto grow-1">
+    <main className="container ml-[25%] w-[75%]">
       <Hero />
     </main>
   );

@@ -3,7 +3,9 @@ import type { HistoryData } from '@/types/data/history';
 const HistoryCard = ({ city, search, country, icon }: HistoryData) => {
   return (
     <li>
-      <div className="relative px-2 mt-1 mr-2 border-b-0 border-gray-200 rounded-t-lg border-1">
+      <div
+        className={`relative px-2 mt-1 mr-2 border-b-0 border-gray-200 rounded-t-lg border-1`}
+      >
         <h4 className="mt-2">
           {city} - {country}
         </h4>
@@ -12,7 +14,7 @@ const HistoryCard = ({ city, search, country, icon }: HistoryData) => {
         </p>
         {/* si pas d'icon, cache le */}
         {icon && (
-          <div className="absolute translate-x-10 flex items-center object-contain overflow-hidden size-10">
+          <div className="absolute top-0 right-0 flex items-center object-contain overflow-hidden size-8">
             <img className="w-full h-full " src={icon} alt={city} />
           </div>
         )}
