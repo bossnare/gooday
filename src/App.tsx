@@ -31,10 +31,8 @@ function App() {
         {/* Overlay */}
         <div
           onClick={() => setIsSown(false)}
-          className={`fixed inset-0 z-5 lg:hidden transition-opacity duration-400 ease-in-out ${
-            isSown
-              ? ' bg-black/40 opacity-100'
-              : 'opacity-0 pointer-events-none'
+          className={`fixed inset-0 z-5 lg:hidden transition-opacity duration-400 ease-in-out bg-black/40 ${
+            isSown ? ' opacity-100' : 'opacity-0 pointer-events-none'
           }`}
         ></div>
 
