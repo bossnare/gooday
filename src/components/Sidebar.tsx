@@ -12,7 +12,7 @@ const Sidebar = ({ isSown, setIsSown }: ChildComponentProps) => {
   const isHistory = history.length > 0;
 
   function clearAllHistory() {
-    if (confirm('Do you have to clear all search history without trace?'))
+    if (confirm('Are you sure you want to clear your search history without a trace?'))
       localStorage.removeItem('history');
   }
 
