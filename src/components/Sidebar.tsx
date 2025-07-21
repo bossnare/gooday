@@ -27,7 +27,7 @@ const Sidebar = ({ isSown, setIsSown }: ChildComponentProps) => {
         <img src="/nav_icon_x32.svg" alt="logo" className="w-10 lg:w-10" />
         <button
           title="Close"
-          className="ml-auto icon"
+          className="ml-auto icon lg:hidden"
           onClick={() => setIsSown(false)}
         >
           <BetweenHorizontalEnd />
