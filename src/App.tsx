@@ -1,14 +1,14 @@
 import {
+  BetweenHorizontalEnd,
   BrushCleaning,
   History,
   StretchHorizontal,
-  BetweenHorizontalEnd,
 } from 'lucide-react';
 import { useState } from 'react';
 import HistoryCard from './components/HistoryCard';
 import Main from './components/Main';
 import Button from './components/ui/Button';
-import { isHistory, history } from './utils/constants';
+import { history, isHistory } from './utils/constants';
 
 function App() {
   const [isSown, setIsSown] = useState(false);
@@ -21,7 +21,7 @@ function App() {
   return (
     <>
       <header className="fixed top-0 left-0 flex justify-center w-full bg-white border-b-1 border-b-gray-200">
-        <nav className="flex items-center w-full gap-2 px-4 py-1 md:container">
+        <nav className="flex items-center w-full gap-2 px-4 py-2 md:container">
           <button className="icon" onClick={() => setIsSown(!isSown)}>
             <StretchHorizontal />
           </button>
@@ -48,7 +48,7 @@ function App() {
             isSown ? 'translate-x-0' : '-translate-x-full px-0'
           } bg-white w-5/6 lg:translate-x-0 will-change-transform h-full flex flex-col transition-transform duration-400 ease-in-out z-10 border-r-1 border-r-gray-200 lg:sticky top-0 left-0 lg:h-auto fixed`}
         >
-          <div className="flex items-center px-2 py-1 border-b-1 border-b-gray-200">
+          <div className="flex items-center px-2 py-2 border-b-1 border-b-gray-200">
             <img src="/nav_icon_x32.svg" alt="logo" className="w-10 lg:w-10" />
 
             <button
