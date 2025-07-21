@@ -14,7 +14,7 @@ function App() {
   const [isSown, setIsSown] = useState(false);
 
   function clearAllHistory() {
-    if (confirm('Do you have to clear all history without trace?'))
+    if (confirm('Do you have to clear all search history without trace?'))
       localStorage.removeItem('history');
   }
 
@@ -63,7 +63,7 @@ function App() {
           </div>
 
           <div className="h-full px-4 mt-3 mb-5 overflow-y-auto prose prose-gray grow-1 scroll-smooth">
-            <h3 className="flex items-center gap-4 text-gray-500">
+            <h3 className="flex items-center gap-2 text-gray-500">
               Search history <History />
             </h3>
 
