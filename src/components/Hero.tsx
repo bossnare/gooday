@@ -65,7 +65,8 @@ const Hero = () => {
         <form onSubmit={fetchWeatherData}>
           <div
             className="md:w-[70%] mx-auto mb-1 border-2 border-gray-400 rounded-md p-1.5 
-          has-[input:focus]:ring-gray-600 has-[input:focus]:ring-2 has-[input:focus]:border-gray-200 flex transition-all duration-300 ease-in-out"
+          has-[input:focus]:ring-gray-600 has-[input:focus]:ring-2 has-[input:focus]:border-gray-200 flex 
+            transition-all duration-300 ease-in-out"
           >
             <input
               onChange={handleChange}
@@ -79,11 +80,15 @@ const Hero = () => {
             />
             <button
               type="submit"
-              className="flex justify-center p-3 bg-gray-100 rounded-md active:bg-gray-200 transition-colors duration-200 ease-in hover:bg-gray-300"
+              className="flex justify-center p-3 bg-gray-100 rounded-md active:bg-gray-200 transition-colors 
+              duration-200 ease-in hover:bg-gray-300"
               disabled={isLoading || !searchTerm.trim() || enabled}
             >
               {isLoading ? (
-                <div className="border-gray-400 rounded-full size-5 animate-spin border-b-transparent border-3"></div>
+                <div
+                  className="border-gray-400 rounded-full size-5 animate-spin border-b-transparent 
+                border-3"
+                ></div>
               ) : (
                 <Search className="text-gray-500" strokeWidth={3} />
               )}

@@ -12,7 +12,7 @@ const HistoryCard = ({ city, search, country, icon }: HistoryData) => {
         </p>
         {/* si pas d'icon, cache le */}
         {icon && (
-          <div className="absolute top-0 right-0 flex items-center object-contain overflow-hidden size-10">
+          <div className="absolute translate-x-10 flex items-center object-contain overflow-hidden size-10">
             <img className="w-full h-full " src={icon} alt={city} />
           </div>
         )}
