@@ -53,7 +53,7 @@ const Hero = () => {
   }
 
   return (
-    <section className="flex flex-col items-center justify-center w-full min-h-screen gap-10 mx-auto mt-10">
+    <section className="flex flex-col items-center justify-center w-full min-h-[100dvh] gap-10 mx-auto">
       <div className="prose text-center">
         <h1>
           {' '}
