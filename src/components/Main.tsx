@@ -2,7 +2,7 @@ import Hero from './Hero';
 
 const Main = () => {
   return (
-    <main className="container ml-[25%] w-[75%]">
+    <main className="container lg:ml-[25%] lg:w-[75%]">
       <Hero />
     </main>
   );
