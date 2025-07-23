@@ -28,7 +28,7 @@ function App() {
       <div className="flex">
         {/* Overlay */}
         <div
-          onClick={() => setIsSown(true)}
+          onClick={() => setIsSown(false)}
           className={`fixed inset-0 z-5 lg:hidden transition-opacity duration-400 
             ease-in-out will-change-auto bg-black/40 
             ${
