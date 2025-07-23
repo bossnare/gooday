@@ -2,7 +2,7 @@ import useFetch from '@/hooks/useFetch';
 import { setHistory } from '@/libs/setHistory.data';
 import { API_URL } from '@/utils/constants';
 import { roundFormat } from '@/utils/roundFormat';
-import { Binoculars, Search, Split, ThermometerSun } from 'lucide-react';
+import { Binoculars, Search, Split, ThermometerSun, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 // ...existing code...
@@ -15,6 +15,8 @@ const Hero = () => {
     `${API_URL}&q=${searchTerm}&aqi=no`,
     enabled
   );
+
+  const hasValue = searchTerm.trim().length > 0;
 
   const { country, name } = data?.location || {
     country: '',
@@ -42,7 +44,7 @@ const Hero = () => {
     e.preventDefault();
     searchTerm.trim();
 
-    if (searchTerm.trim().length > 0) {
+    if (hasValue) {
       handleSearch();
     }
   };
@@ -79,10 +81,19 @@ const Hero = () => {
               disabled={isLoading}
             />
             <button
+              onClick={() => setSearchTerm('')}
+              className={`${
+                hasValue ? 'scale-100' : 'scale-0'
+              } transition-transform 
+            duration-100 p-2 text-gray-500`}
+            >
+              <X />
+            </button>
+            <button
               type="submit"
               className="flex justify-center p-3 bg-gray-100 rounded-md active:bg-gray-200 transition-colors 
-              duration-200 ease-in hover:bg-gray-300"
-              disabled={isLoading || !searchTerm.trim() || enabled}
+              duration-200 ease-in hover:bg-gray-300 text-gray-500"
+              disabled={isLoading || !hasValue || enabled}
             >
               {isLoading ? (
                 <div
@@ -90,7 +101,7 @@ const Hero = () => {
                 border-3"
                 ></div>
               ) : (
-                <Search className="text-gray-500" strokeWidth={3} />
+                <Search strokeWidth={3} />
               )}
             </button>
           </div>
