@@ -54,6 +54,20 @@ const Hero = () => {
     if (!hasValue) setEnabled(false);
   }, [hasValue]);
 
+  // autofocus input
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (!isFocused && e.ctrlKey && e.key === 'k') {
+        e.preventDefault();
+
+        ref?.current?.focus();
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isFocused]);
+
   function handleSearch() {
     setEnabled(true); // Réinitialise le champ de recherche après la soumission
   }
