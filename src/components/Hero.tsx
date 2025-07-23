@@ -2,8 +2,15 @@ import useFetch from '@/hooks/useFetch';
 import { setHistory } from '@/libs/setHistory.data';
 import { API_URL } from '@/utils/constants';
 import { roundFormat } from '@/utils/roundFormat';
-import { Binoculars, Search, Split, ThermometerSun, X } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import {
+  Binoculars,
+  Command,
+  Search,
+  Split,
+  ThermometerSun,
+  X,
+} from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
 // ...existing code...
 // Corrige la gestion du formulaire et du bouton de recherche météo
@@ -11,10 +18,18 @@ import { useEffect, useState } from 'react';
 const Hero = () => {
   const [enabled, setEnabled] = useState(false);
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const [isFocused, setIsFocused] = useState(false);
   const { data, error, isLoading } = useFetch(
     `${API_URL}&q=${searchTerm}&aqi=no`,
     enabled
   );
+
+  const ref = useRef<HTMLInputElement>(null);
+
+  function handleClear() {
+    setSearchTerm('');
+    ref?.current?.focus();
+  }
 
   const hasValue = searchTerm.trim().length > 0;
 
@@ -34,6 +49,10 @@ const Hero = () => {
       data?.current?.condition?.icon
     );
   }, [data, error, searchTerm, name, country, data?.current?.condition?.icon]);
+
+  useEffect(() => {
+    if (!hasValue) setEnabled(false);
+  }, [hasValue]);
 
   function handleSearch() {
     setEnabled(true); // Réinitialise le champ de recherche après la soumission
@@ -68,10 +87,13 @@ const Hero = () => {
           <div
             className="md:w-[70%] mx-auto mb-1 border-2 border-gray-400 rounded-md p-1.5 
           has-[input:focus]:ring-gray-600 has-[input:focus]:ring-2 has-[input:focus]:border-gray-200 flex 
-            transition-all duration-300 ease-in-out"
+            items-center transition-all duration-300 ease-in-out"
           >
             <input
+              ref={ref}
               onChange={handleChange}
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => setIsFocused(false)}
               id="is"
               placeholder="Enter the name of a city..."
               type="search"
@@ -80,13 +102,19 @@ const Hero = () => {
               value={searchTerm}
               disabled={isLoading}
             />
+
+            {!isFocused && (
+              <div className="hidden lg:flex gap-2 text-gray-500">
+                <Command /> Ctrl + K
+              </div>
+            )}
             <button
               type="button"
-              onClick={() => setSearchTerm('')}
+              onClick={() => handleClear()}
               className={`${
-                hasValue ? 'scale-100' : 'scale-0'
+                hasValue ? 'scale-100 p-2' : 'scale-0 p-0'
               } transition-transform 
-            duration-100 p-2 text-gray-500`}
+            duration-100 ease-in-out text-gray-500`}
             >
               <X />
             </button>
@@ -144,7 +172,7 @@ const Hero = () => {
           )
         )}
 
-        {error && !isLoading && (
+        {error && !isLoading && hasValue && (
           <div className="text-red-500 block md:mx-auto w-[70%]">
             {error.message}
           </div>

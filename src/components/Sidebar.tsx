@@ -4,17 +4,12 @@ import { BetweenHorizontalEnd, BrushCleaning, History } from 'lucide-react';
 import HistoryCard from './HistoryCard';
 import Button from './ui/Button';
 
-const Sidebar = ({ isSown, setIsSown }: ChildComponentProps) => {
+const Sidebar = ({ isSown, setIsSown, setIsModal }: ChildComponentProps) => {
   // localStorage
   const history: HistoryData[] = JSON.parse(
     localStorage.getItem('history') || '[]'
   );
   const isHistory = history.length > 0;
-
-  function clearAllHistory() {
-    if (confirm('Are you sure you want to clear your search history without a trace?'))
-      localStorage.removeItem('history');
-  }
 
   return (
     <aside
@@ -41,7 +36,7 @@ const Sidebar = ({ isSown, setIsSown }: ChildComponentProps) => {
             <button
               title="Clear All"
               className="ml-auto icon"
-              onClick={() => clearAllHistory()}
+              onClick={() => setIsModal(true)}
             >
               <BrushCleaning />
             </button>

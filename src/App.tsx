@@ -2,9 +2,11 @@ import { StretchHorizontal } from 'lucide-react';
 import { useState } from 'react';
 import Main from './components/Main';
 import Sidebar from './components/Sidebar';
+import { ModalConfirm } from './components/ui/Modal';
 
 function App() {
   const [isSown, setIsSown] = useState(false);
+  const [isModal, setIsModal] = useState(false);
 
   return (
     <>
@@ -26,14 +28,33 @@ function App() {
       <div className="flex">
         {/* Overlay */}
         <div
-          onClick={() => setIsSown(false)}
+          onClick={() => setIsSown(true)}
           className={`fixed inset-0 z-5 lg:hidden transition-opacity duration-400 
             ease-in-out will-change-auto bg-black/40 
-            ${isSown ? ' opacity-100' : 'opacity-0 pointer-events-none'}`}
+            ${
+              isSown && !isModal
+                ? ' opacity-100'
+                : 'opacity-0 pointer-events-none'
+            }`}
         ></div>
 
+        <div
+          onClick={() => setIsModal(false)}
+          className={`${
+            isModal ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          } fixed inset-0 bg-black/40 z-15 transition-opacity duration-400 
+            ease-in-out will-change-auto`}
+        ></div>
+
+        {/* Modal */}
+        <ModalConfirm isModal={isModal} setIsModal={setIsModal} />
+
         {/* sidebar */}
-        <Sidebar isSown={isSown} setIsSown={setIsSown} />
+        <Sidebar
+          isSown={isSown}
+          setIsSown={setIsSown}
+          setIsModal={setIsModal}
+        />
 
         {/* Main app */}
         <Main />
