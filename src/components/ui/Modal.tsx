@@ -12,7 +12,7 @@ const ModalConfirm = ({ isModal, setIsModal }: ModalProps) => {
   return (
     <div
       className={`${
-        isModal ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        isModal ? 'scale-100' : 'scale-0 pointer-events-none'
       } transition-transform duration-200 ease-in-out fixed w-5/6 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:w-1/3 
     z-20 prose bg-white rounded-md p-4`}
     >
