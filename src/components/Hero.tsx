@@ -111,7 +111,7 @@ const Hero = () => {
               id="is"
               placeholder="Enter the name of a city..."
               type="search"
-              className="bg-transparent min-w-0 grow-1 focus:outline-hidden"
+              className="bg-transparent h-full min-w-0 grow-1 focus:outline-hidden"
               name="customSearch"
               value={searchTerm}
               disabled={isLoading}
