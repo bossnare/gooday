@@ -128,7 +128,7 @@ const Hero = () => {
               className={`${
                 hasValue ? 'scale-100 p-2' : 'scale-0 p-0'
               } transition-transform 
-            duration-100 ease-in-out text-gray-500`}
+            duration-100 ease-in-out text-gray-500 active:text-gray-300`}
             >
               <X />
             </button>

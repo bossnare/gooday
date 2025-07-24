@@ -13,7 +13,7 @@ const ModalConfirm = ({ isModal, setIsModal }: ModalProps) => {
     <div
       className={`${
         isModal ? 'opacity-100' : 'opacity-0 pointer-events-none'
-      } transition-transform duration-50 ease-in-out fixed w-5/6 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:w-1/3 
+      } transition-transform duration-50 ease-in-out fixed w-5/6 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:w-2/3 
     z-20 prose bg-white rounded-md p-4`}
     >
       <h4>Message</h4>
@@ -23,7 +23,7 @@ const ModalConfirm = ({ isModal, setIsModal }: ModalProps) => {
       <div className="flex gap-3">
         <button
           onClick={() => setIsModal(false)}
-          className="px-3.5 py-2 bg-[#00D4FF] active:bg-[#00D4FF]/80 text-white rounded-full"
+          className="px-3.5 py-2 gradient-bg active:bg-[#00D4FF]/80 text-white rounded-full"
         >
           Annuler
         </button>
