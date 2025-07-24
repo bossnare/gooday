@@ -42,7 +42,7 @@ function App() {
           onClick={() => setIsModal(false)}
           className={`${
             isModal ? 'opacity-100' : 'opacity-0 pointer-events-none'
-          } fixed inset-0 bg-black/40 z-15 transition-opacity duration-400 
+          } fixed inset-0 bg-black/40 z-15 transition-opacity duration-100 
             ease-in-out will-change-auto`}
         ></div>
 
