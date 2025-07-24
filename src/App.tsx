@@ -32,7 +32,7 @@ function App() {
           className={`fixed inset-0 z-5 lg:hidden transition-opacity duration-400 
             ease-in-out will-change-auto bg-black/40 
             ${
-              isSown && !isModal
+              isSown
                 ? ' opacity-100'
                 : 'opacity-0 pointer-events-none'
             }`}
