@@ -58,7 +58,11 @@ const Sidebar = ({ isSown, setIsSown, setIsModal }: ChildComponentProps) => {
               Nothing search history, please create one. To create this, go to
               search bar and search your favourite city.
             </p>
-            <Button label="Create one" className="text-white gradient-bg" />
+            <Button
+              onClick={() => setIsSown(false)}
+              label="Create one"
+              className="text-white gradient-bg"
+            />
           </div>
         )}
       </div>
