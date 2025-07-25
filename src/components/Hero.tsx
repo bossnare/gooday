@@ -109,7 +109,7 @@ const Hero = () => {
               onFocus={() => setIsFocused(true)}
               onBlur={() => setIsFocused(false)}
               id="is"
-              placeholder="Enter the name of a city..."
+              placeholder="Type the name of a city..."
               type="search"
               className="bg-transparent min-w-0 grow focus:outline-hidden"
               name="customSearch"
